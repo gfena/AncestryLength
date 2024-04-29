@@ -12,11 +12,11 @@ Last updated: May 01, 2024
 
 You can download the latest file, AncestryTrackv1.0.2, with the command:
 
-   _wget https://github.com/gfena/AncestryTrack/main/AncestryTrackv1.0.2.rb_
+ ```wget https://github.com/gfena/AncestryTrack/main/AncestryTrackv1.0.2.rb```
 
 or you can directly download the source files.
 
-   _git clone https://github.com/gfena/AncestryTrack.git_
+```git clone https://github.com/gfena/AncestryTrack.git```
 
 # Running AncestryTrack
 
@@ -24,12 +24,12 @@ The AncestryTrack program requires Ruby version 3.3.1 (or a later version). Use 
 
 The command:
 
-   _ruby AncestryTrackv1.0.0.rb_
+```ruby AncestryTrackv1.0.0.rb```
 
 prints a summary of the command line arguments.
 
-   _Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
-       Please provide the input file path_
+```Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
+       Please provide the input file path```
 
 where [arguments] is a space-separated list of parameter values, each expressed as --parameter.
 
