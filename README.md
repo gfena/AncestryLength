@@ -28,8 +28,10 @@ The command:
 
 prints a summary of the command line arguments.
 
-```Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
-       Please provide the input file path```
+```
+Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
+       Please provide the input file path
+```
 
 where [arguments] is a space-separated list of parameter values, each expressed as --parameter.
 
