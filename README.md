@@ -34,6 +34,12 @@ prints a summary of the command line arguments.
 where [arguments] is a space-separated list of parameter values, each expressed as --parameter.
 
 The shell script run.AncestryTrack.test.sh will run a test AncestryTrack analysis.
+To iterate the program over the 22 chromosomes, run in this form:
+
+_for chr in {1..22}
+do
+rubyAncestryTrackv1.0.0.rb -i prefix.$chr.csv -o prefix.$chr.ancestrylength [argument]
+done_
 
 # Required Parameters
 
@@ -68,6 +74,8 @@ Each line of the csv output files represents one local ancestry segment and cont
     Sample Identifier
     Ancestry Identifier
     Tract Length
+
+Results of the different chromosomes can be merged in a single output after the computation by using the provided script: _ConcatenateATresults.rb_
 
 # Errors
 If your input file has missing data i.e. missing ancestry in a random haplotype, the program will detect it and automatically stop.
