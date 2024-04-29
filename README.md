@@ -1,4 +1,4 @@
-The **AncestryTrack** program measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). The AncestryTrack program can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome.
+The **AncestryTrack** program measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). The AncestryTrack program can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
 
 If you use **AncestryTrack** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryTrack method:
 
@@ -39,21 +39,26 @@ The shell script run.AncestryTrack.test.sh will run a test AncestryTrack analysi
 
 The AncestryTrack program has two required parameters.
 
-   -i/--input [file] where [file] is a Variant Call Format (VCF) file. All VCF records must include a GT FORMAT subfield, all genotypes must be phased, and there can be no missing alleles. If your data is unphased, you can phase your data using the Beagle program. A VCF record may have multiple ALT alleles. A VCF file with a name ending in ".gz" is assumed to be gzip-compressed.
+   -i/--input [file] where [file] is a .msp.tsv file which contains the most likely ancestral assignment for all variants in each individual in the cohort. 
+   The msp.tsv files are created as output files by RFMix2 or G-Nomix local ancestry estimation softwares.
+   All tsv files must be edited prior to the analysis to remove the first line and the '#' character that is printed by RFMix at the beginning of the header. 
+   Each chromosome must be run independently to perform the correct estimation. If RFMix results were previously merged in a single file, this can be split in chromosome by using the provided script: _SplitByChromosomes.rb_
 
-   -o/--output=[string] where [string] is the output filename prefix.
+   -o/--output=[string] where [string] is the output filename prefix. AncestryTrack produces two output files: a [string].csv and a [string].log.txt. 
+   The CSV is the main output which contains the length of measured local ancestry tracts and the relative haplotype (or individual if --[nohap] was selected).
+   The log file contains the 'switch' information by individual.
 
 # Optional Parameters
 
     --MB Converts tract length from Base to MegaBase. If unspecified, the program will automatically print the values in bases.
     
-    --nohap  Removes haplotype information from the output file.
+    --nohap  Removes haplotype information from the output file, printing only the [individual] names. If unspecified, the haplotype names will be printed i.e. each individual will have [individual]_0 and [individual]_1.
     
     --parallel Use multithreading for the computation. Usually slower than the standard, to use only if having issues with the standard computation.
 
 # Output files
 
-The hap-ibd program produces three output files: a log file, an ibd file, and an hbd file.
+The AncestryTrack program produces three output files: a log file, an ibd file, and an hbd file.
 
 The log file (.log) contains a summary of the analysis, which includes the analysis parameters, the number of markers, the number of samples, the number of output HBD and IBD segments, and the mean number of HBD and IBD segments per sample.
 
@@ -67,6 +72,9 @@ The gzip-compressed ibd file (.ibd.gz) contains IBD segments shared between indi
     Base coordinate of first marker in segment
     Base coordinate of last marker in segment
     cM length of IBD segment
+
+# Errors
+If your input file has missing data i.e. missing ancestry in a random haplotype, the program will detect it and automatically stop.
 
 # License
 
