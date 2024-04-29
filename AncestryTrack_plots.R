@@ -17,15 +17,19 @@ idpop <- read.delim("IDpop_info2pops.txt", header=TRUE, sep='\t') %>%
 
 dfjoin <- left_join(df,idpop,by=c("Haplotype"="ID"))
 
-#### Do total average
+#### Calculate mean and median
+
 avgtotal <- dfjoin %>% group_by(POP,Ancestry) %>% summarise(AvgTract=mean(TractLengths))
 mediantotal <- dfjoin %>% group_by(POP,Ancestry) %>% summarise(AvgTract=median(TractLengths))
 
-### do boxplot in R base
+### Boxplot in base R
+
 # Create a new variable that combines POP and Ancestry
+
 dfjoin$POP_Ancestry <- paste(dfjoin$POP, dfjoin$Ancestry, sep = "_")
 
 # Subset TractLengths by POP
+
 european_lengths <- dfjoin$TractLengths[dfjoin$POP_Ancestry == "EuropeanRoma_0"]
 iberian_lengths <- dfjoin$TractLengths[dfjoin$POP_Ancestry == "IberianRoma_0"]
 european_lengths1 <- dfjoin$TractLengths[dfjoin$POP_Ancestry == "EuropeanRoma_1"]
@@ -55,31 +59,6 @@ combined_wilcox_df <- do.call(rbind, combined_wilcox)
 
 write.table(combined_wilcox_df,file = "/home/bioevo/Desktop/Giacomo/LAI/totalAVG_wilctest.csv",sep = "\t")
 
-### plot wilcox results
-boxplotwilc1 <- ggplot(dfjoin, aes(x = POP, y = TractLengths, fill = POP)) +
-  geom_boxplot() +
-  labs(title = "Boxplot of TractLengths by POP") +
-  theme_minimal()
-
-if(wilcox1$p.value < 0.05) {
-  p_value <- format(wilcox1$p.value, digits = 2, scientific = TRUE)
-  boxplotwilc1 <- boxplotwilc1 +
-    annotate("text", x = 1, y = max(dfjoin$TractLengths), label = paste("p =", p_value), vjust = -1)
-}
-boxplotwilc1
-
-boxplotwilc2 <- ggplot(dfjoin, aes(x = POP, y = TractLengths, fill = POP)) +
-  geom_boxplot() +
-  labs(title = "Boxplot of TractLengths by POP") +
-  theme_minimal()
-
-if(wilcox2$p.value < 0.05) {
-  p_value <- format(wilcox2$p.value, digits = 2, scientific = TRUE)
-  boxplotwilc2 <- boxplotwilc2 +
-    annotate("text", x = 1, y = max(dfjoin$TractLengths), label = paste("p =", p_value), vjust = -1)
-}
-boxplotwilc2
-
 ### Define Categories of Length
 # Short Tracts (0.5-20 megabases)
 # Medium Tracts (20-100 megabases)
@@ -90,7 +69,7 @@ lai_category <- dfjoin %>%
     TractLengths >= 150 & TractLengths <= 250 ~ "150-250",
     TractLengths >= 100 & TractLengths < 150 ~ "100-150",
     TractLengths >= 20 & TractLengths < 100 ~ "20-100",
-    TractLengths >= 0.03 & TractLengths < 20 ~ "0.03-20",
+    TractLengths >= 0 & TractLengths < 20 ~ "0-20",
     TRUE ~ NA_character_  # Handling other cases, if any
   )) %>%
   ungroup()
