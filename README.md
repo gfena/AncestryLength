@@ -2,7 +2,7 @@ The **AncestryTrack** program measures the length of local ancestry tracts obtai
 
 If you use **AncestryTrack** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryTrack method:
 
-   G.F. Ena, M. Araujo-Castro, A. Giménez, A. Carballo-Mesa, D. Comas. Exploring the Iberian Roma Trail: A Journey on Europe Edge. 
+  _ G.F. Ena, M. Araujo-Castro, A. Giménez, A. Carballo-Mesa, D. Comas. Exploring the Iberian Roma Trail: A Journey on Europe Edge. _
 
 Giacomo F. Ena
 
@@ -12,11 +12,11 @@ Last updated: May 01, 2024
 
 You can download the latest file, AncestryTrackv1.0.2, with the command:
 
-wget https://github.com/gfena/AncestryTrack/main/AncestryTrackv1.0.2.rb
+   wget https://github.com/gfena/AncestryTrack/main/AncestryTrackv1.0.2.rb
 
 or you can directly download the source files.
 
-git clone https://github.com/gfena/AncestryTrack.git
+   git clone https://github.com/gfena/AncestryTrack.git
 
 # Running AncestryTrack
 
@@ -24,12 +24,12 @@ The AncestryTrack program requires Ruby version 3.3.1 (or a later version). Use 
 
 The command:
 
-ruby AncestryTrackv1.0.0.rb
+   ruby AncestryTrackv1.0.0.rb
 
 prints a summary of the command line arguments.
 
-Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
-    Please provide the input file path
+   Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
+       Please provide the input file path
 
 where [arguments] is a space-separated list of parameter values, each expressed as --parameter.
 
@@ -39,14 +39,16 @@ The shell script run.AncestryTrack.test.sh will run a test AncestryTrack analysi
 
 The AncestryTrack program has two required parameters.
 
-    -i/--input [file] where [file] is a Variant Call Format (VCF) file. All VCF records must include a GT FORMAT subfield, all genotypes must be phased, and there can be no missing alleles. If your data is unphased, you can phase your data using the Beagle program. A VCF record may have multiple ALT alleles. A VCF file with a name ending in ".gz" is assumed to be gzip-compressed.
+   -i/--input [file] where [file] is a Variant Call Format (VCF) file. All VCF records must include a GT FORMAT subfield, all genotypes must be phased, and there can be no missing alleles. If your data is unphased, you can phase your data using the Beagle program. A VCF record may have multiple ALT alleles. A VCF file with a name ending in ".gz" is assumed to be gzip-compressed.
 
-    -o/--output=[string] where [string] is the output filename prefix.
+   -o/--output=[string] where [string] is the output filename prefix.
 
 # Optional Parameters
 
     --MB Converts tract length from Base to MegaBase. If unspecified, the program will automatically print the values in bases.
+    
     --nohap  Removes haplotype information from the output file.
+    
     --parallel Use multithreading for the computation. Usually slower than the standard, to use only if having issues with the standard computation.
 
 # Output files
@@ -66,6 +68,6 @@ The gzip-compressed ibd file (.ibd.gz) contains IBD segments shared between indi
     Base coordinate of last marker in segment
     cM length of IBD segment
 
-License
+# License
 
 The AncestryTrack program is licensed under the Apache License, Version 2.0 (the License). You may obtain a copy of the License from http://www.apache.org/licenses/LICENSE-2.0
