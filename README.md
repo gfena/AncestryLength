@@ -20,7 +20,7 @@ or you can directly download the source files.
 
 # Running AncestryTrack
 
-The AncestryTrack program requires Ruby version 3.3.1 (or a later version). Use of an earlier Ruby version could still work but it has not been tested, therefore it's not officially supported.
+The AncestryTrack program requires Ruby version 3.3.1 (or a later version). Use of an earlier Ruby version could still work but it has not been tested, therefore support for older versions won't be provided.
 
 The command:
 
@@ -41,12 +41,10 @@ The AncestryTrack program has two required parameters.
 
    -i/--input [file] where [file] is a .msp.tsv file which contains the most likely ancestral assignment for all variants in each individual in the cohort. 
    The msp.tsv files are created as output files by RFMix2 or G-Nomix local ancestry estimation softwares.
-   All tsv files must be edited prior to the analysis to remove the first line and the '#' character that is printed by RFMix at the beginning of the header. 
+   All tsv files must be edited prior to the analysis to remove the first line and the '#' character that is printed by RFMix at the beginning of the header, and converted to comma separated values (CSV).
    Each chromosome must be run independently to perform the correct estimation. If RFMix results were previously merged in a single file, this can be split in chromosome by using the provided script: _SplitByChromosomes.rb_
 
-   -o/--output=[string] where [string] is the output filename prefix. AncestryTrack produces two output files: a [string].csv and a [string].log.txt. 
-   The CSV is the main output which contains the length of measured local ancestry tracts and the relative haplotype (or individual if --[nohap] was selected).
-   The log file contains the 'switch' information by individual.
+   -o/--output=[string] where [string] is the output filename prefix.
 
 # Optional Parameters
 
@@ -58,20 +56,17 @@ The AncestryTrack program has two required parameters.
 
 # Output files
 
-The AncestryTrack program produces three output files: a log file, an ibd file, and an hbd file.
+The AncestryTrack program produces two output files: a log file and a csv file.
 
-The log file (.log) contains a summary of the analysis, which includes the analysis parameters, the number of markers, the number of samples, the number of output HBD and IBD segments, and the mean number of HBD and IBD segments per sample.
+The CSV (.csv) is the main output which contains the length of measured local ancestry tracts and the relative haplotype (or individual if --[nohap] was selected).
+   
+The log file (.log.txt) contains a summary of the analysis, which includes the analysis parameters, the number of markers, the number of samples, the 'switch' information by individual.
 
-The gzip-compressed ibd file (.ibd.gz) contains IBD segments shared between individuals. The gzip-compressed hbd file (.hbd.gz) contains HBD segments within within individuals. Each line of the ibd and hbd output files represents one IBD or HBD segment and contains 8 tab-delimited fields:
+Each line of the csv output files represents one local ancestry segment and contains 3 tab-delimited fields:
 
-    First sample identifier
-    First sample haplotype index (1 or 2)
-    Second sample identifier
-    Second sample haplotype index (1 or 2)
-    Chromosome
-    Base coordinate of first marker in segment
-    Base coordinate of last marker in segment
-    cM length of IBD segment
+    Sample Identifier
+    Ancestry Identifier
+    Tract Length
 
 # Errors
 If your input file has missing data i.e. missing ancestry in a random haplotype, the program will detect it and automatically stop.
