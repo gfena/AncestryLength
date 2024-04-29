@@ -40,6 +40,7 @@ The shell script run.AncestryTrack.test.sh will run a test AncestryTrack analysi
 The AncestryTrack program has two required parameters.
 
    -i/--input [file] where [file] is a .msp.tsv file which contains the most likely ancestral assignment for all variants in each individual in the cohort. 
+   
    The msp.tsv files are created as output files by RFMix2 or G-Nomix local ancestry estimation softwares.
    All tsv files must be edited prior to the analysis to remove the first line and the '#' character that is printed by RFMix at the beginning of the header, and converted to comma separated values (CSV).
    Each chromosome must be run independently to perform the correct estimation. If RFMix results were previously merged in a single file, this can be split in chromosome by using the provided script: _SplitByChromosomes.rb_
