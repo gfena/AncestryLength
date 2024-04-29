@@ -83,6 +83,9 @@ Each line of the csv output files represents one local ancestry segment and cont
 
 Results of the different chromosomes can be merged in a single output after the computation by using the provided script: _ConcatenateATresults.rb_
 
+# Additional Provided Code
+In the repository are included R scripts to perform plots and Mann U statistical tests. These codes are included as-is, as they were developed for the project and need to be edited with your data in order to be functional. Example input files are provided.
+
 # Errors
 If your input file has missing data i.e. missing ancestry in a random haplotype, the program will detect it and automatically stop.
 
