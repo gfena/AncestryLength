@@ -36,10 +36,12 @@ where [arguments] is a space-separated list of parameter values, each expressed 
 The shell script run.AncestryTrack.test.sh will run a test AncestryTrack analysis.
 To iterate the program over the 22 chromosomes, run in this form:
 
-_for chr in {1..22}
+```
+for chr in {1..22}
 do
 rubyAncestryTrackv1.0.0.rb -i prefix.$chr.csv -o prefix.$chr.ancestrylength [argument]
-done_
+done
+```
 
 # Required Parameters
 
