@@ -1,6 +1,6 @@
 # AncestryTrack
 
-The **AncestryTrack** program measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). The AncestryTrack program can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
+**AncestryTrack** is a script that measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). AncestryTrack can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
 
 If you use **AncestryTrack** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryTrack method:
 
@@ -8,7 +8,7 @@ If you use **AncestryTrack** in a published analysis, please report the program 
 
 Giacomo F. Ena
 
-Last updated: May 01, 2024
+Last updated: Oct 08, 2024
 
 # Installation
 
@@ -22,7 +22,7 @@ or you can directly download the source files.
 
 # Running AncestryTrack
 
-The AncestryTrack program requires Ruby version 3.3.1 (or a later version). Use of an earlier Ruby version could still work but it has not been tested, therefore support for older versions won't be provided.
+AncestryTrack requires Ruby version 3.3.1 (or a later version). Use of an earlier Ruby version could still work but it has not been tested, therefore support for older versions will not be provided.
 
 The command:
 
@@ -91,4 +91,4 @@ If your input file has missing data i.e. missing ancestry in a random haplotype,
 
 # License
 
-The AncestryTrack program is licensed under the Apache License, Version 2.0 (the License). You may obtain a copy of the License from http://www.apache.org/licenses/LICENSE-2.0
+AncestryTrack is licensed under the Apache License, Version 2.0 (the License). You may obtain a copy of the License from http://www.apache.org/licenses/LICENSE-2.0
