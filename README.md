@@ -2,7 +2,7 @@
 
 **AncestryLength.rb** is a script that measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). AncestryLength can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
 
-If you use **AncestryLength** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryTrack method:
+If you use **AncestryLength** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryLength method:
 
   *G.F. Ena, M. Araujo-Castro, A. Giménez, A. Carballo-Mesa, D. Comas. Exploring the Iberian Roma Trail: A Journey on Europe Edge.*
 
@@ -12,44 +12,44 @@ Last updated: Oct 08, 2024
 
 # Installation
 
-You can download the latest file, AncestryTrackv1.0.2, with the command:
+You can download the latest file, AncestryLengthv1.0.2, with the command:
 
- ```wget https://github.com/gfena/AncestryTrack/main/AncestryTrackv1.0.2.rb```
+ ```wget https://github.com/gfena/AncestryLength/main/AncestryLengthv1.0.2.rb```
 
 or you can directly download the source files.
 
-```git clone https://github.com/gfena/AncestryTrack.git```
+```git clone https://github.com/gfena/AncestryLength.git```
 
-# Running AncestryTrack
+# Running AncestryLength
 
-AncestryTrack requires Ruby version 3.3.1 (or a later version). Use of an earlier Ruby version could still work but it has not been tested, therefore support for older versions will not be provided.
+AncestryLength requires Ruby version 3.3.1 (or a later version). Use of an earlier Ruby version could still work but it has not been tested, therefore support for older versions will not be provided.
 
 The command:
 
-```ruby AncestryTrackv1.0.0.rb```
+```ruby AncestryLengthv1.0.0.rb```
 
 prints a summary of the command line arguments.
 
 ```
-Usage: ruby AncestryTrackv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
+Usage: ruby AncestryLengthv1.0.2.rb -i input_file -o output_file [--MB] [--nohap] [--parallel]
        Please provide the input file path
 ```
 
 where [arguments] is a space-separated list of parameter values, each expressed as --parameter.
 
-The shell script run.AncestryTrack.test.sh will run a test AncestryTrack analysis.
+The shell script run.AncestryLength.test.sh will run a test AncestryLength analysis.
 To iterate the program over the 22 chromosomes, run in this form:
 
 ```
 for chr in {1..22}
 do
-rubyAncestryTrackv1.0.0.rb -i prefix.$chr.csv -o prefix.$chr.ancestrylength [argument]
+rubyAncestryLengthv1.0.0.rb -i prefix.$chr.csv -o prefix.$chr.ancestrylength [argument]
 done
 ```
 
 # Required Parameters
 
-The AncestryTrack program has two required parameters.
+The AncestryLength program has two required parameters.
 
    -i/--input [file] where [file] is a .msp.tsv file which contains the most likely ancestral assignment for all variants in each individual in the cohort. 
    
@@ -69,7 +69,7 @@ The AncestryTrack program has two required parameters.
 
 # Output files
 
-The AncestryTrack program produces two output files: a log file and a csv file.
+The AncestryLength program produces two output files: a log file and a csv file.
 
 The CSV (.csv) is the main output which contains the length of measured local ancestry tracts and the relative haplotype (or individual if --[nohap] was selected).
    
@@ -91,4 +91,4 @@ If your input file has missing data i.e. missing ancestry in a random haplotype,
 
 # License
 
-AncestryTrack is licensed under the Apache License, Version 2.0 (the License). You may obtain a copy of the License from http://www.apache.org/licenses/LICENSE-2.0
+AncestryLength is licensed under the Apache License, Version 2.0 (the License). You may obtain a copy of the License from http://www.apache.org/licenses/LICENSE-2.0
