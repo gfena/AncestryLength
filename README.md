@@ -1,8 +1,8 @@
-# AncestryTrack
+# AncestryLength
 
-**AncestryTrack** is a script that measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). AncestryTrack can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
+**AncestryLength.rb** is a script that measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). AncestryLength can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
 
-If you use **AncestryTrack** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryTrack method:
+If you use **AncestryLength** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryTrack method:
 
   *G.F. Ena, M. Araujo-Castro, A. Giménez, A. Carballo-Mesa, D. Comas. Exploring the Iberian Roma Trail: A Journey on Europe Edge.*
 
