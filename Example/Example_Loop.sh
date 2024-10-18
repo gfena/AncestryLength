@@ -1,3 +1,4 @@
+#!/bin/bash
 
 input="/yourdirectory/inputbychr/"
 out="yourdirectory/output/"
