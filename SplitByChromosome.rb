@@ -8,7 +8,7 @@ def main(input_file, output_dir)
 
   # Check if 'chm' column exists
   unless df.headers.include?('chm')
-    puts "Error: 'chm' column not found in the input CSV file."
+    puts "Error: 'chm' column not found in the input CSV file. Verify that your input is comma delimited"
     puts "Column names found in the input CSV file:"
     puts df.headers
     return
