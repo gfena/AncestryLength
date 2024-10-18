@@ -4,11 +4,11 @@
 
 If you use **AncestryLength** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryLength method:
 
-  *G.F. Ena, M. Araujo-Castro, A. Giménez, A. Carballo-Mesa, D. Comas. Exploring the Iberian Roma Trail: A Journey on Europe Edge.*
+  *unpublished data*
 
 Giacomo F. Ena
 
-Last updated: Oct 08, 2024
+Last updated: Oct 18, 2024
 
 # Installation
 
@@ -84,7 +84,7 @@ Each line of the csv output files represents one local ancestry segment and cont
 Results of the different chromosomes can be merged in a single output after the computation by using the provided script: _ConcatenateATresults.rb_
 
 # Additional Provided Code
-In the repository are included R scripts to perform plots and Mann U statistical tests. These codes are included as-is, as they were developed for the project and need to be edited with your data in order to be functional. Example input files are provided.
+In the repository are included R scripts to perform plots and Mann U statistical tests. The codes are included as-is, as they were developed for the project and need to be edited with your data in order to be functional. Example input files are provided.
 
 # Errors
 If your input file has missing data i.e. missing ancestry in a random haplotype, the program will detect it and automatically stop.
