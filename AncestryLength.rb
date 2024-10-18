@@ -13,9 +13,9 @@ SCRIPT_VERSION = "1.0.0"
 def detect_switch_points(input_file, switch_output_file, tract_output_file, divide_by_million, remove_hap_suffix)
   switch_points = {}
   tract_lengths = {}
-  total_rows = `wc -l "#{input_file}"`.to_i  # Count total number of rows in the CSV file
+  total_rows = `wc -l "#{input_file}"`.to_i  
 
-  start_time = Time.now  # Record the start time
+  start_time = Time.now  
   processed_rows = 0
 
   CSV.foreach(input_file, headers: true, col_sep: ',') do |row|
@@ -71,7 +71,7 @@ def detect_switch_points(input_file, switch_output_file, tract_output_file, divi
 
   # Write tract lengths to tract output file
   File.open(tract_output_file, 'w') do |f|
-    f.puts "TractLengths\tAncestry\tHaplotype" 
+    f.puts "Tract_Length\tAncestry\tHaplotype" 
     tract_lengths.each do |individual, lengths|
       lengths.each do |length, state|
         haplotype = remove_hap_suffix ? individual.gsub(/\.0|\.1/, '') : individual
@@ -80,9 +80,9 @@ def detect_switch_points(input_file, switch_output_file, tract_output_file, divi
     end
   end
 
-  end_time = Time.now  # Record the end time
-  elapsed_time = end_time - start_time  # Calculate elapsed time
-  puts "\nElapsed time: #{elapsed_time} seconds"  # Print elapsed time
+  end_time = Time.now 
+  elapsed_time = end_time - start_time  
+  puts "\nElapsed time: #{elapsed_time} seconds"  
   puts "Computation is complete."
 end
 
@@ -130,7 +130,24 @@ end
 options = {}
 OptionParser.new do |opts|
   opts.banner = 'Usage: ruby AncestryLength.rb -i input_file -o output_file [--MB] [--nohap] [--version]'
-  opts.on
+  opts.on('-i', '--input INPUT_FILE', 'Input *.msp file') do |input_file|
+    options[:input] = input_file
+  end
+  opts.on('-o', '--output OUTPUT_FILE', 'Output file with switch points and tract lengths') do |output_file|
+    options[:output] = output_file
+  end
+  opts.on('--MB', 'Convert to MegaBases') do
+    options[:divide_by_million] = true
+  end
+  opts.on('--nohap', 'Ignore Haplotype Information') do
+    options[:remove_hap_suffix] = true
+  end
+  opts.on_tail('--help', 'Prints this help') do
+    options[:help] = true
+  end
+  opts.on('--version', 'Show script version') do
+  options[:version] = true
+  end
 end.parse!
 
 main(options)
