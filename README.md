@@ -12,7 +12,7 @@ Last updated: Oct 18, 2024
 
 # Installation
 
-You can download the latest file, AncestryLengthv1.0.2, with the command:
+You can download the latest file, AncestryLengthv1.0.0, with the command:
 
  ```wget https://github.com/gfena/AncestryLength/main/AncestryLengthv1.0.2.rb```
 
