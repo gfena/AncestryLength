@@ -14,7 +14,7 @@ Last updated: Oct 18, 2024
 
 You can download the latest file, AncestryLengthv1.0.0, with the command:
 
- ```wget https://github.com/gfena/AncestryLength/main/AncestryLength.rb```
+ ```wget "https://raw.githubusercontent.com/gfena/AncestryLength/main/AncestryLength.rb"```
 
 or you can directly download the source files.
 
