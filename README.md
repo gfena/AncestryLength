@@ -1,8 +1,8 @@
 # AncestryLength
 
-**AncestryLength.rb** is a script that measures the length of local ancestry tracts obtained from Local Ancestry Inference (LAI). AncestryLength can analyse data sets with thousands of samples and multiple ancestries, iterating by chromosome. It can be used for any model of LAI analysis, starting from the 2-way admixture model up to any number.
+**AncestryLength.rb** is a script designed to measure the length of local ancestry tracts derived from Local Ancestry Inference (LAI) analyses. It efficiently handles large datasets, including thousands of samples and multiple ancestries, by iterating across chromosomes. The script is compatible with various LAI models, ranging from simple 2-way admixture to models involving multiple ancestries.
 
-If you use **AncestryLength** in a published analysis, please report the program version printed in the first line of the output log file and please cite the article that describes the AncestryLength method:
+If you use **AncestryLength** in a published analysis, please ensure to report the program version found in the first line of the output log file. Additionally, kindly cite the article that describes the AncestryLength method:
 
   *unpublished data*
 
