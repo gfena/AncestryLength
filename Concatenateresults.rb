@@ -8,7 +8,7 @@ def concatenate_csv(input_directory, output_file)
 
   # Iterate over each file in the directory
   Dir.foreach(input_directory) do |filename|
-    if filename.start_with?("Roma.chr") && filename.end_with?(".ancestrylength.csv")
+    if filename.start_with?("yourfile.chr") && filename.end_with?(".ancestrylength.csv")
       # Extract the chromosome number from the filename
       chr_number = filename.split('.')[1]
       
@@ -22,7 +22,7 @@ def concatenate_csv(input_directory, output_file)
   end
 
   # Reorder columns
-  headers = ['chr', 'TractLengths', 'Ancestry', 'Haplotype']
+  headers = ['chr', 'Tract_Length', 'Ancestry', 'Haplotype']
   
   # Write data to the output CSV file
   CSV.open(output_file, 'wb', col_sep: "\t") do |csv|
