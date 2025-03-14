@@ -4,11 +4,11 @@
 
 If you use **AncestryLength** in a published analysis, please ensure to report the program version found in the first line of the output log file. Additionally, kindly cite the article that describes the AncestryLength method:
 
-  *unpublished data*
+Ena, G. F., Giménez, A., Carballo-Mesa, A., Lišková, P., Araújo Castro e Silva, M., & Comas, D. (2025). The genetic footprint of the European Roma diaspora: Evidence from the Balkans to the Iberian Peninsula. Human Genetics.
 
 Giacomo F. Ena
 
-Last updated: Oct 18, 2024
+Last updated: March 14, 2025
 
 # Installation
 
